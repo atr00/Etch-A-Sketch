@@ -48,13 +48,13 @@ function del_items() {
 
 function chg_size() {
     del_items();
-    try {
-        grid_size = Number(prompt('Enter the number of items per row'));
-        build_grid(grid_size);
+    grid_size = Number(prompt('Enter the number of items per row'));
+    if (isNaN(grid_size)) {
+        alert('Please enter a number');
+        return;
     }
-    catch(err) {
-        console.log(err);
-    }
+    build_grid(grid_size);
+
 }
 
 function set_color(e) {
